@@ -10,7 +10,6 @@ class TestToDo < MiniTest::Test
       @todos = [
        
           {text: "Washing", done: false},
-          {text: "Make Dinner", done: false},
           {text: "Homework", done: false},
           {text: "Update README", done: true}
       ]
@@ -21,15 +20,12 @@ class TestToDo < MiniTest::Test
       
       return_from_model = outstanding_count(@todos)
       
-      assert_output( "Outstanding todos = 3\n") do
-         output_outstanding_count(return_from_model)
+      assert_output( "Outstanding todos = 2\n") do
+         output_outstanding_count( return_from_model )
       end
       
        
    end
-
-
-
 
 end
 

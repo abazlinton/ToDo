@@ -43,13 +43,17 @@ end
   def test_outstanding_todos__empty
     @todos.pop(4)
     todos = outstanding_todos(@todos)
-    assert_equal( NilClass, todos.class) 
+    assert_equal( NilClass, todos.class ) 
 
   end
 
+  def test_add_todo
+    add_todo("Get groceries")
+    expected_last_todo = {text: "Get groceries", done: false}
 
+    assert_equal(expected_last_todo, @todos.last)
+  end
 end
-
 
 
 

@@ -17,3 +17,8 @@ def outstanding_todos(todos)
 
 end
 
+def add_todo(text)
+   binding.pry
+   @todos << {text: text, done: false}
+end
+
