@@ -48,13 +48,13 @@ end
   end
 
 
-
 end
 
 
 
 #
-
+puts outstanding_count(@list)
+puts outstanding_todos(@list)
 
 
 
