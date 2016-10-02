@@ -2,7 +2,7 @@ require_relative 'todo.rb'
 
 
 def output_outstanding_count(returned_data)
-	puts "Outstanding todos = #{returned_data}"
+  puts "Outstanding todos = #{returned_data}"
 end
 
 def output_outstanding_todos(returned_data)
@@ -13,10 +13,11 @@ def output_outstanding_todos(returned_data)
   end
 end
 
-@todos = [ {text: "Washing", done: false},
-          {text: "Homework", done: false},
-          {text: "Update README", done: true}
-      ]
+@todos = [ 
+  {text: "Washing", done: false},
+  {text: "Homework", done: false},
+  {text: "Update README", done: true}
+]
 
 puts "Name of new Todo?"
 text = gets
