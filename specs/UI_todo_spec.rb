@@ -27,5 +27,16 @@ class TestToDo < MiniTest::Test
        
    end
 
+   def test_output_outstanding_todos
+      
+      return_from_model = outstanding_todos(@todos)
+      
+      assert_output( "1. Washing\n2. Homework\n") do
+         output_outstanding_todos( return_from_model )
+      end
+      
+       
+   end
+
 end
 
