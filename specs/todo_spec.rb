@@ -9,10 +9,10 @@ def setup
 
   @todos = [
    
-          {text: "Washing", done: false},
-          {text: "Make Dinner", done: false},
-          {text: "Homework", done: false},
-          {text: "Update README", done: true}
+      {text: "Washing", done: false},
+      {text: "Make Dinner", done: false},
+      {text: "Homework", done: false},
+      {text: "Update README", done: true}
   ]
 end
 
@@ -50,21 +50,6 @@ end
 
 end
 
-
-puts outstanding_count([
-   
-          {text: "Washing", done: false},
-          {text: "Make Dinner", done: false},
-          {text: "Homework", done: false},
-          {text: "Update README", done: true}
-  ])
-puts outstanding_todos([
-   
-          {text: "Washing", done: false},
-          {text: "Make Dinner", done: false},
-          {text: "Homework", done: false},
-          {text: "Update README", done: true}
-  ])
 
 
 
