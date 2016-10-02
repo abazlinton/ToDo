@@ -7,101 +7,47 @@ class TestToDo < MiniTest::Test
 
 def setup
 
-  @lists = [
-    {
-      name: "Personal",
-      todos: [
+  @todos = [
+   
           {text: "Washing", done: false},
-          {text: "Make Dinner", done: false}
-
-      ]
-    },
-    {
-      name: "CodeClan",
-      todos: [
-
+          {text: "Make Dinner", done: false},
           {text: "Homework", done: false},
           {text: "Update README", done: true}
-
-      ]
-    },
-    {
-      name: "Blank",
-      todos: [
-      ]
-
-    }
-
   ]
 end
 
-  #count one list's todos
-  def test_outstanding_count_list__list_exists
-    count = outstanding_count_list(@lists, "Personal")
-
-    assert_equal(2, count)
-  end
-
-  def test_outstanding_count_list__list_does_not_exist
-    count = outstanding_count_list(@lists, "I do not exist")
-    assert_equal(nil, count)
-
-  end
-
-  def test_outstanding_count_list__list_is_empty
-    @lists[0][:todos].pop(2)
-    count = outstanding_count_list(@lists, "Personal")
-    assert_equal(0, count)
+  #count one todos's todos
+  def test_outstanding_count
+    count = outstanding_count(@todos)
+    assert_equal(3, count)
 
   end
 
 
-  #count all lists' todos
-  def test_outstanding_count_global
-    count = outstanding_count_global(@lists)
-
-    assert_equal(4, count)
-  end
-
-  def test_outstanding_count_global__no_lists_exist
-    @lists = []
-    count = outstanding_count_global(@lists)
+  def test_outstanding_count__empty
+    @todos.pop(4)
+    count = outstanding_count(@todos)
     assert_equal(nil, count)
   end
 
-  def test_outstanding_count_global__no_lists
-    @lists = []
-    count = outstanding_count_global(@lists)
-    assert_equal(nil, count)
-  end
 
-  #return oustanding todos in a list
-  def test_outstanding_todos_list
-    todos = outstanding_todos_list(@lists, "CodeClan")
 
+  #return oustanding todos in a todos
+  def test_outstanding_todos
+  todos = outstanding_todos(@todos)
     assert_equal( Array, todos.class) 
-    assert_equal( 1, todos.count)
-
-    todos = outstanding_todos_list(@lists, "Personal")
-    assert_equal( Array, todos.class) 
-    assert_equal( 2, todos.count)
+    assert_equal( 4, todos.count)
 
   end
 
-  def test_outstanding_todos_list__list_empty
-    todos = outstanding_todos_list(@lists, "Blank")
-
+  def test_outstanding_todos__empty
+    @todos.pop(4)
+    todos = outstanding_todos(@todos)
     assert_equal( NilClass, todos.class) 
 
   end
 
-  #return all outstanding todos
-  def test_outstanding_todos_global
-    todos = outstanding_todos_global(@lists)
 
-    assert_equal( Array, todos.class) 
-    assert_equal( 3, todos.count)
-  end
 
 end
 
