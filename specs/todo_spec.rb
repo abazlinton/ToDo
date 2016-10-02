@@ -12,7 +12,6 @@ def setup
 			todos: [
 				text: "Washing",
 				done: false
-
 			]
 		},
 		{
@@ -22,9 +21,6 @@ def setup
 				done: false
 
 			]
-
-
-
 		}
 
 	]
