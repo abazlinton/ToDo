@@ -36,7 +36,7 @@ end
   def test_outstanding_todos
   todos = outstanding_todos(@todos)
     assert_equal( Array, todos.class) 
-    assert_equal( 4, todos.count)
+    assert_equal( 3, todos.count)
 
   end
 
@@ -51,10 +51,20 @@ end
 end
 
 
-
-#
-puts outstanding_count(@list)
-puts outstanding_todos(@list)
+puts outstanding_count([
+   
+          {text: "Washing", done: false},
+          {text: "Make Dinner", done: false},
+          {text: "Homework", done: false},
+          {text: "Update README", done: true}
+  ])
+puts outstanding_todos([
+   
+          {text: "Washing", done: false},
+          {text: "Make Dinner", done: false},
+          {text: "Homework", done: false},
+          {text: "Update README", done: true}
+  ])
 
 
 
