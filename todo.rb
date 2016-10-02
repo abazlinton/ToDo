@@ -7,14 +7,13 @@ def outstanding_count(todos)
    return outstanding
 end
 
-
-
 def outstanding_todos(todos)  
    return nil if todos == []
    outstandings = []
    for todo in todos
          outstandings << todo if todo[:done] == false
    end
+   return outstandings
 
 end
 
