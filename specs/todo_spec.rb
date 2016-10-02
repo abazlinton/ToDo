@@ -44,14 +44,14 @@ end
   def test_outstanding_todos_list
     todos = todos_outstanding(@lists, "CodeClan")
 
-    assert_equal( "Array", todos.class) 
+    assert_equal( Array, todos.class) 
     assert_equal( 1, todos.count)
   end
 
   def test_outstanding_todos_global
     todos = outstanding(@lists)
 
-    assert_equal( "Array", todos.class) 
+    assert_equal( Array, todos.class) 
     assert_equal( 3, todos.count)
   end
 
