@@ -1,6 +1,7 @@
 require 'pry-byebug'
 require 'minitest/autorun'
 require 'minitest/rg'
+require_relative '../todo.rb'
 
 class TestToDo < MiniTest::Test
 
@@ -30,26 +31,26 @@ end
 
 
   def test_outstanding_count_list
-    count = outstanding(@lists, "Personal")
+    count = outstanding_count_list(@lists, "Personal")
 
     assert_equal(2, count)
   end
 
   def test_outstanding_count_global
-    count = outstanding(@lists)
+    count = outstanding_count_global(@lists)
 
     assert_equal(3, count)
   end
 
   def test_outstanding_todos_list
-    todos = todos_outstanding(@lists, "CodeClan")
+    todos = outstanding_todos_list(@lists, "CodeClan")
 
     assert_equal( Array, todos.class) 
     assert_equal( 1, todos.count)
   end
 
   def test_outstanding_todos_global
-    todos = outstanding(@lists)
+    todos = outstanding_todos_global(@lists)
 
     assert_equal( Array, todos.class) 
     assert_equal( 3, todos.count)
