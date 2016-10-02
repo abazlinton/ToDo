@@ -1,37 +1,20 @@
-def outstanding_count_list(lists, list_name)
-
-   for list in lists
-      if list[:name] == list_name
-         return list[:todos].length
-      end
+def outstanding_count(todos)
+   return nil if todos == []
+   outstanding = 0
+   for todo in todos
+      outstanding += 1 if todo[:done] == false
    end
-   return nil
+   return outstanding
 end
 
-def outstanding_count_global(lists)
-   return nil if lists == []
-   global_count = 0
-   for list in lists
-      global_count += outstanding_count_list(lists, list[:name])
+
+
+def outstanding_todos(todos)  
+   return nil if todos == []
+   outstandings = []
+   for todo in todos
+         outstandings << todo if todo[:done] == false
    end
-   return global_count
-end
-
-def outstanding_todos_list(lists, list_name)
-   todos = []
-   for list in lists
-      if list[:name] == list_name
-         return nil if list[:todos] == []
-         for todo in list[:todos]
-            if todo[:done] == false
-               todos << todo
-            end
-         end
-      end
-   end
-   return todos
 
 end
 
-def outstanding_todos_global(list)
-end
